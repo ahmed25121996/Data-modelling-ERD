@@ -1,0 +1,45 @@
+1.	DreamHome Company designed to facilitate connecting people who are interested in properties renting and the owners of these properties. Note that ‘Rent’ is the value of the property cost, which determined by the negotiation between the customer and the owner. Use the below data to reach the 3rd Normal Form. Show your answer steps. Start with Customer number as a PK. Ignore Page number and Date mentioned in the below bill.
+
+Solution:
+0NF:
+(#Customer_No,CName,property_No,PAddress,RentStart,RentFinish,Rent,Owner_No,OName)
+
+
+
+1NF:
+(#Customer_No,CName)
+(#Customer_No,#property_No,PAddress,Owner_No,OName,RentStart,RentFinish,Rent)
+2NF:
+(#Customer_No,CName)
+(#property_No,PAddress,Owner_No,OName)
+(#Customer_No,#property_No,RentStart,RentFinish,Rent)
+
+3NF:
+(#Customer_No,CName)
+(#Customer_No,#property_No,RentStart,RentFinish,Rent)
+(#Owner_No,OName)
+(#property_No,PAddress,Owner_No)
+
+
+
+2.	The below report shows detailed information about the organization projects and the employees work for. As shown in below records; the project may have many employees; also, an employee may work for more than one project. Each job classification has a specific hourly rate (CHG/Hour). You are required to apply the 1st, 2nd and 3rd NF
+  
+  Solution:
+  
+ 1NF:
+ (#Roj.NO,PROJ.NAME)
+ (#PROJ.NO,#EMP.NO,EMP.NO,EMP.NAME,JOBCLASS,CHG/Hour,HOURSBILLED)
+ 2NF:
+ 
+ (#Roj.NO,PROJ.NAME)
+ (#EMP.NO,EMP.NAME,JOBCLASS,CHG/Hour)
+ (#PROJ.NO,#EMP.NO,HOURSBILLED)
+ 
+ 3NF:
+ (#Roj.NO,PROJ.NAME)
+ (#PROJ.NO,#EMP.NO,HOURSBILLED)
+ 
+ (#JOBCLASS,CHG/Hour)
+ 
+ 
+
